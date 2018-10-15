@@ -7,13 +7,19 @@ public class PigLatin {
 		Scanner scan = new Scanner(System.in);
 		String usrInput;
 		String results;
+		String cont = "y";
+
+		// fix this while loop
+		while (cont.equalsIgnoreCase("y")) {
+
 		System.out.println("Welcome to Pig Latin Translator!");
 		System.out.println("Enter a line to be translated: ");
 		usrInput = scan.nextLine();
 		usrInput = usrInput.toLowerCase();
 		String[] usrWords = usrInput.split(" ");
 
-
+		// use isvowel method to check if first char is a vowel if its not, run
+		// consonant
 		for (int i = 0; i < usrWords.length; i++) {
 
 			if (isVowel(usrWords[i])) {
@@ -25,9 +31,15 @@ public class PigLatin {
 		}
 		System.out.println();
 
+			System.out.println("\nDo you want to continue? (y/n)");
+			cont = scan.next();
+		}
+		System.out.println("Goodbye");
 		scan.close();
 	}
 
+
+	// if first letter is consonant, find the first vowel move and add ay
 	private static String convertToPigLatinForConsonant(String word) {
 		int split = firstVowel(word);
 		return word.substring(split) + word.substring(0, split) + "ay";
