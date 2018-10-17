@@ -9,8 +9,7 @@ public class PigLatin {
 		String results;
 		String cont = "y";
 
-		// fix this while loop
-		while (cont.equalsIgnoreCase("y")) {
+
 
 		System.out.println("Welcome to Pig Latin Translator!");
 		System.out.println("Enter a line to be translated: ");
@@ -29,13 +28,7 @@ public class PigLatin {
 			}
 			System.out.print(results + " ");
 		}
-		System.out.println();
 
-			System.out.println("\nDo you want to continue? (y/n)");
-			cont = scan.next();
-		}
-		System.out.println("Goodbye");
-		scan.close();
 	}
 
 
